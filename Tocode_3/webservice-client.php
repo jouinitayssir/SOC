@@ -9,12 +9,9 @@
 		$intA = trim($_POST['intA']);
 		$intB = trim($_POST['intB']);
 		if(!$intA || !$intB) {
-			$error = 'yaatek kasra aabi kol chy';
+			$error = 'all inputs are required!';
 		}
-		// if(!is_nan((int)$intA) ||!is_nan((int)$intB)){
-			// $error = 'yaatek kasra aabi hot noumrou';
-		// }
-
+		
 		if(!$error){
 			//create client object
 			$client = new nusoap_client($wsdl, true);
