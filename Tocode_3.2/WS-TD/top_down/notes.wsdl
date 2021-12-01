@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8800/mywebservices/top_down/note-server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Notes" targetNamespace="http://localhost:8800/mywebservices/top_down/note-server.php">
+  <types>
+    <xsd:schema targetNamespace="http://localhost:8800/mywebservices/top_down/note-server.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="NotesPort">
+    <operation name="Notes">
+      <input message="tns:NotesIn"/>
+    </operation>
+  </portType>
+  <binding name="NotesBinding" type="tns:NotesPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Notes">
+      <soap:operation soapAction="http://localhost:8800/mywebservices/top_down/note-server.php#Notes"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8800/mywebservices/top_down/note-server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8800/mywebservices/top_down/note-server.php"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="NotesIn"/>
+  <service name="NotesService">
+    <port name="NotesPort" binding="tns:NotesBinding">
+      <soap:address location="http://localhost:8800/mywebservices/top_down/note-server.php"/>
+    </port>
+  </service>
+</definitions>
