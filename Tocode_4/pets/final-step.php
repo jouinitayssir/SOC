@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://localhost/pets/rws1.php',
+        CURLOPT_URL => 'http://localhost/soc/Tocode_4/pets/rws1.php',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -51,9 +51,7 @@ if (isset($_POST["submit"])) {
     ));
 
     $response = curl_exec($curl);
-
     $response = json_decode($response, true);
-
     curl_close($curl);
     // echo $response;
 }

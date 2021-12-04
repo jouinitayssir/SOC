@@ -1814,7 +1814,7 @@ $data = [
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'http://localhost/pets/rws1.php',
+    CURLOPT_URL => 'http://localhost/soc/Tocode_4/pets/rws1.php',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
